@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,8 @@ Route::get('/biodata', function () {
     ];
     return response()->json($data);
 });
+
+Route::apiResource('pegawai', PegawaiController::class);
+
+Route::put('pegawai', [PegawaiController::class, 'update2']);
+Route::delete('pegawai', [PegawaiController::class, 'destroy2']);
